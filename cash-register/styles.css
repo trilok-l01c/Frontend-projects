@@ -89,12 +89,15 @@ div {
   width: 100%;
   max-width: 450px;
   height: auto;
-  min-height: 350px;
+  min-height: 250px;
   margin: 1.5rem auto;
   background-color: #232323;
   border-radius: 12px;
   padding: 1.5rem;
   border: 1px solid #3d3d3d;
+  font-size: 22px;
+  font-weight: 500;
+  overflow-wrap: break-word;
 }
 
 button {
