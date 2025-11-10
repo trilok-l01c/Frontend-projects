@@ -1,6 +1,15 @@
 const range = (start, end) => Array(end - start + 1).fill(start).map((element, index) => element + index);
 const charRange = (start, end) => range(start.charCodeAt(0), end.charCodeAt(0)).map(code => String.fromCharCode(code));
 
+const sum = nums => nums.reduce((el, acc) => el + acc, 0);
+const isEven = num => !(num%2);
+const average = nums => sum(nums)/nums.length;
+const median = nums => {
+    const sorted = nums.slice().sort();
+    const mid = nums.length/2 - 1;
+    if(nums.length % 2 === 0)return average([sorted[mid], sorted[mid + 1]]);
+    else return sorted[Math.ceil(mid)];
+}
 window.onload = () => {
     const colHeaders = document.getElementById("col-head");
     const rowHeaders = document.getElementById("row-head");
