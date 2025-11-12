@@ -12,6 +12,10 @@ const median = nums => {
     else return sorted[Math.ceil(mid)];
 }
 
+const evalFormula = (cells, x){
+    const idToText = id => cells.find(cell => cell.id === id).value;
+    const rangeRegex = /([A-J])([1-9][0-9]?):([A-J])([1-9][0-9]?)/gi;
+}
 // object of spreadsheet funcitons
 const spreadsheetFuncs = {
     sum,
@@ -51,4 +55,12 @@ window.onload = () => {
             container.appendChild(cell);
         });
     });
+}
+
+const update = (event) => {
+    const element = event.target;
+    const value = element.value.replace(/\s/g, "");
+    if(!value.includes(element.id) && value[0] === '='){
+        
+    }
 }
