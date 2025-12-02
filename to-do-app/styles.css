@@ -1,9 +1,9 @@
 :root {
-    --white: #fff;
-    --light-grey: #f5f6f7;
-    --dark-grey: #0a0a23;
-    --yellow: #f1be32;
-    --golden-yellow: #feac32;
+    --pri_bg: #d6c6c6;
+    --sec-bg: #063d74;
+    --main-bg: #e6e6ec;
+    --border-clr: #09476b;
+    --btn-clr: #0a3863;
 }
 
 *,
@@ -14,8 +14,12 @@
     box-sizing: border-box;
 }
 
+html {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
 body {
-    background-color: var(--dark-grey);
+    background-color: var(--main-bg);
 }
 
 main {
@@ -26,15 +30,15 @@ main {
 }
 
 h1 {
-    color: var(--light-grey);
+    color: var(--sec-bg);
     margin: 20px 0 40px 0;
 }
 
 .todo-app {
-    background-color: var(--white);
+    background-color: var(--pri_bg);
     width: 300px;
     height: 350px;
-    border: 5px solid var(--yellow);
+    border: 5px solid var(--border-clr);
     border-radius: 8px;
     padding: 15px;
     position: relative;
@@ -47,15 +51,20 @@ h1 {
     cursor: pointer;
     width: 100px;
     margin: 10px;
-    color: var(--dark-grey);
-    background-color: var(--golden-yellow);
-    background-image: linear-gradient(#fecc4c, #ffac33);
-    border-color: var(--golden-yellow);
+    color: var(--main-bg);
+    background-color: var(--btn-clr);
+    background-image: linear-gradient(var(--btn-clr), var(--sec-bg));
+    border-color: var(--btn-clr);
+    box-shadow: 0 2px 6px var(--border-clr);
     border-width: 3px;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
 }
 
-.btn:hover {
-    background-image: linear-gradient(#ffcc4c, #f89808);
+.btn:hover,
+.btn:active {
+    transform: translateY(-2px);
+    background-image: linear-gradient(var(--sec-bg), var(--btn-clr));
 }
 
 .large-btn {
@@ -63,6 +72,7 @@ h1 {
     font-size: 1.2rem;
     align-self: center;
     justify-self: center;
+    border-radius: 4px;
 }
 
 .close-task-form-btn {
@@ -82,7 +92,7 @@ h1 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: var(--white);
+    background-color: var(--pri_bg);
     border-radius: 5px;
     padding: 15px;
     width: 300px;
@@ -127,6 +137,8 @@ h1 {
     width: 100%;
     margin-bottom: 10px;
     padding: 2px;
+    border-radius: 4px;
+    border: 2px solid var(--border-clr);
 }
 
 #confirm-close-dialog {
