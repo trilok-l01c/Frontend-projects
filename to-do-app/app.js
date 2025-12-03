@@ -10,6 +10,7 @@ const titleInput = document.getElementById("title-input");
 const dateInput = document.getElementById("date-input");
 const descriptionInput = document.getElementById("description-input");
 
+// adding task to local storage
 const taskData = JSON.parse(localStorage.getItem("data")) || [];
 let currentTask = {};
 
